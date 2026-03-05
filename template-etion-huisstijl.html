@@ -140,6 +140,10 @@
       linkStyle { label: Link; properties: face color size decoration=none }
       linkStyle:preview { -ko-bind-text: @['Link']; -ko-font-size: @[size]px; -ko-font-family: @face; -ko-color: @color; -ko-text-decoration: @[decoration] }
       longTextStyle { label: Paragraph; properties: face color size lineHeight align linksColor   }
+      quoteTextStyle { label: Quote Text; extend: longTextStyle }
+      quoteTextStyle size { label: Text Size; widget: integer; min: 10; max: 40; default: 15 }
+      quoteTitleStyle { label: Quote Title; extend: titleTextStyle }
+      quoteTitleStyle size { label: Title Size; widget: integer; min: 10; max: 60; default: 24 }
       longTextStyle:preview { -ko-bind-text: @['AaZz']; -ko-font-family: @face; -ko-color: @color; -ko-font-size: @[size]px; }
       bigButtonStyle { label: Big Button; extend: buttonStyle }
       titleTextStyle { label: Title; extend: textStyle }
@@ -279,6 +283,8 @@
       singleArticleBlock imageWidth { label: Image Size; widget: select; options: 166=Small|258=Medium|350=Big|534=Full }
       singleArticleBlock { label: Image/Text Block; properties: titleVisible=true buttonVisible=true imageVisible=true imageWidth=534 titleTextStyle longTextStyle buttonStyle  image  longText buttonLink; theme: contentTheme}
 
+      quoteBlock { label: Quote Block; properties: backgroundColor titleVisible=true buttonVisible=true quoteTitleStyle quoteTextStyle buttonStyle longText titleText buttonLink; theme: contentTheme}
+
       footerEtionBlock { label: Footer Etion Block; properties: longTextStyle longText; theme: contentTheme}
 
       fixedImageHeightVisible { label: Fix image height; extend: visible; }
@@ -322,6 +328,7 @@
       sideImageBlock:preview,
       textBlock:preview,
       singleArticleBlock:preview,
+      quoteBlock:preview,
       footerEtionBlock:preview,
       doubleArticleBlock:preview,
       tripleArticleBlock:preview,
@@ -674,6 +681,33 @@
     </td></tr>
     </table>
     <!-- /singleArticleBlock -->
+    <!-- quoteBlock -->
+    <table role="presentation" class="vb-outer" width="100%" cellpadding="0" border="0" cellspacing="0" bgcolor="#f0e8e0" style="background-color: #f0e8e0; -ko-background-color: @[externalBackgroundColor]; -ko-attr-bgcolor: @[externalBackgroundColor]" data-ko-block="quoteBlock">
+      <tr><td class="vb-outer" align="center" valign="top" style="padding-left: 9px; padding-right: 9px; font-size: 0">
+      <!--[if (gte mso 9)|(lte ie 8)]><table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="570"><tr><td align="center" valign="top"><![endif]--><!--
+      --><div style="margin: 0 auto; max-width: 570px; -mru-width: 0px"><table role="presentation" class="vb-row" border="0" cellpadding="0" cellspacing="9" style="border-collapse: collapse; width: 100%; background-color: #FFBF21; max-width: 570px; -mru-width: 0px" bgcolor="#FFBF21" width="570">
+        
+        <tr>
+      <td align="center" valign="top" style="font-size: 0; padding: 0 9px; padding-top: 13px; padding-bottom: 13px; -ko-padding-top: @[blockSpacing.topPadding]px; -ko-padding-bottom: @[blockSpacing.bottomPadding]px;"><div style="vertical-align:top; width:100%; max-width: 552px; -mru-width: 0px"><!--
+        --><table role="presentation" border="0" cellspacing="9" cellpadding="0" style="border-collapse: collapse; width: 100%" width="552">
+          <tr data-ko-display="titleVisible">
+      <td width="100%" valign="top" style="font-weight: normal; color: #000000; font-size: 24px; font-family: Arial, Helvetica, sans-serif; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: center; -ko-font-size: @[quoteTitleStyle.size]px; -ko-color: @quoteTitleStyle.color; -ko-font-family: @quoteTitleStyle.face; -ko-text-align: @quoteTitleStyle.align; -ko-attr-align: @quoteTitleStyle.align" align="center"><span style="font-weight: normal" data-ko-editable="titleText">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</span></td>
+    </tr>
+          <tr><td class="long-text links-color" width="100%" valign="top" style="font-weight: normal; color: #000000; font-size: 15px; font-family: Arial, Helvetica, sans-serif; padding: 9px; padding-top: 5px; padding-bottom: 5px; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: left; line-height: normal; -ko-font-size: @[quoteTextStyle.size]px; -ko-color: @quoteTextStyle.color; -ko-font-family: @quoteTextStyle.face; -ko-text-align: @quoteTextStyle.align; -ko-attr-align: @quoteTextStyle.align; -ko-line-height: @[quoteTextStyle.lineHeight]" align="left" data-ko-editable="longText"><p></p></td></tr>
+          <tr data-ko-display="buttonVisible">
+      <td valign="top" align="center" style="" padding: 9px; padding-top: 5px; padding-bottom: 5px; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px;"><table role="presentation" cellpadding="10" border="0" align="center" cellspacing="0" style="border-spacing: 0; mso-padding-alt: 10px 24px 10px 24px; margin-top: 2px; -ko-attr-cellpadding: @[Math.min(buttonStyle.verticalPadding, buttonStyle.horizontalPadding)]; -ko-mso-padding-alt: @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px"><tr data-ko-display="buttonVisible">
+        <td width="auto" valign="middle" align="center" style="text-align:center; font-weight: normal; padding: 10px; padding-left: 24px; padding-right: 24px; background-color: #000000; color: #ffffff; font-size: 15px; font-family: Arial, Helvetica, sans-serif; border-radius: 40px; border: 0px solid #3f3f3f; -ko-border-radius: @[buttonStyle.radius]px; -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor; -ko-border: @[buttonStyle.borderWidth]px solid @buttonStyle.borderColor; -ko-border-if: buttonStyle.borderWidth > 0; -ko-padding: @[buttonStyle.verticalPadding]px; -ko-padding-left: @[buttonStyle.horizontalPadding]px; -ko-padding-right: @[buttonStyle.horizontalPadding]px; -ko-font-size: @[buttonStyle.size]px; -ko-color: @buttonStyle.color; -ko-font-family: @buttonStyle.face" bgcolor="#000000"><a href="" style="text-decoration: none; font-weight: normal; color: #ffffff; font-size: 15px; font-family: Arial, Helvetica, sans-serif; -ko-font-size: @[buttonStyle.size]px; -ko-color: @buttonStyle.color; -ko-font-family: @buttonStyle.face; -ko-attr-href: @buttonLink.url"><span data-ko-wrap="false" data-ko-editable="buttonLink.text">BUTTON</span></a></td>
+      </tr></table></td>
+    </tr>
+        
+        </table></div></td>
+    </tr>
+      
+      </table></div><!--
+    --><!--[if (gte mso 9)|(lte ie 8)]></td></tr></table><![endif]-->
+    </td></tr>
+    </table>
+    <!-- /quoteBlock -->
     <!-- footerEtionBlock -->
     <table role="presentation" class="vb-outer" width="100%" cellpadding="0" border="0" cellspacing="0" bgcolor="#f0e8e0" style="background-color: #f0e8e0; -ko-background-color: @[externalBackgroundColor]; -ko-attr-bgcolor: @[externalBackgroundColor]" data-ko-block="footerEtionBlock">
       <tr><td class="vb-outer" align="center" valign="top" style="padding-left: 9px; padding-right: 9px; font-size: 0">
