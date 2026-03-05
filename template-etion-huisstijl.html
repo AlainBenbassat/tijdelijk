@@ -317,7 +317,7 @@
 
       buttonBlock { label: Button Block; properties: bigButtonStyle; theme: contentTheme}
       hrBlock { label: Separator Block; properties: hrStyle; theme: contentTheme; deprecated: true }
-      hrBlock2 { label: Separator Block; properties: hrStyle; theme: contentTheme }
+      hrBlock2 { label: Separator Block; properties: hrStyle blockSpacing; theme: contentTheme }
       spacerBlock { label: Spacer Block; properties: externalBackgroundVisible=true; variant: externalBackgroundVisible; theme: contentTheme }
 
       spacerBlock:preview,
@@ -500,6 +500,9 @@
       color: #3f3f3f;
       -ko-color: @longTextStyle.linksColor;
       text-decoration: underline;
+    }
+    [data-ko-block=hrBlock2] td[height="1"] {
+      background-color: #bfbfbf !important;
     }
   </style>
   
@@ -698,7 +701,7 @@
     </tr>
           <tr><td class="long-text links-color" width="100%" valign="top" style="font-weight: normal; color: #000000; font-size: 15px; font-family: Arial, Helvetica, sans-serif; padding: 9px; padding-top: 5px; padding-bottom: 5px; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: left; line-height: normal; -ko-font-size: @[quoteTextStyle.size]px; -ko-color: @quoteTextStyle.color; -ko-font-family: @quoteTextStyle.face; -ko-text-align: @quoteTextStyle.align; -ko-attr-align: @quoteTextStyle.align; -ko-line-height: @[quoteTextStyle.lineHeight]" align="left" data-ko-editable="longText"><p></p></td></tr>
           <tr data-ko-display="buttonVisible">
-      <td valign="top" align="center" style="" padding: 9px; padding-top: 5px; padding-bottom: 5px; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px;"><table role="presentation" cellpadding="10" border="0" align="center" cellspacing="0" style="border-spacing: 0; mso-padding-alt: 10px 24px 10px 24px; margin-top: 2px; -ko-attr-cellpadding: @[Math.min(buttonStyle.verticalPadding, buttonStyle.horizontalPadding)]; -ko-mso-padding-alt: @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px"><tr data-ko-display="buttonVisible">
+      <td valign="top" align="center" style="padding: 9px; padding-top: 5px; padding-bottom: 5px; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px;"><table role="presentation" cellpadding="10" border="0" align="center" cellspacing="0" style="border-spacing: 0; mso-padding-alt: 10px 24px 10px 24px; margin-top: 2px; -ko-attr-cellpadding: @[Math.min(buttonStyle.verticalPadding, buttonStyle.horizontalPadding)]; -ko-mso-padding-alt: @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px"><tr data-ko-display="buttonVisible">
         <td width="auto" valign="middle" align="center" style="text-align:center; font-weight: normal; padding: 10px; padding-left: 24px; padding-right: 24px; background-color: #000000; color: #ffffff; font-size: 15px; font-family: Arial, Helvetica, sans-serif; border-radius: 40px; border: 0px solid #3f3f3f; -ko-border-radius: @[buttonStyle.radius]px; -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor; -ko-border: @[buttonStyle.borderWidth]px solid @buttonStyle.borderColor; -ko-border-if: buttonStyle.borderWidth > 0; -ko-padding: @[buttonStyle.verticalPadding]px; -ko-padding-left: @[buttonStyle.horizontalPadding]px; -ko-padding-right: @[buttonStyle.horizontalPadding]px; -ko-font-size: @[buttonStyle.size]px; -ko-color: @buttonStyle.color; -ko-font-family: @buttonStyle.face" bgcolor="#000000"><a href="" style="text-decoration: none; font-weight: normal; color: #ffffff; font-size: 15px; font-family: Arial, Helvetica, sans-serif; -ko-font-size: @[buttonStyle.size]px; -ko-color: @buttonStyle.color; -ko-font-family: @buttonStyle.face; -ko-attr-href: @buttonLink.url"><span data-ko-wrap="false" data-ko-editable="buttonLink.text">BUTTON</span></a></td>
       </tr></table></td>
     </tr>
@@ -1015,7 +1018,7 @@
         --><table role="presentation" border="0" cellspacing="9" cellpadding="0" style="border-collapse: collapse; width: 100%" width="552">
           
           <tr>
-      <td valign="top" align="center" style="padding: 9px; padding-top: 5px; padding-bottom: 5px; padding: 9px; padding-top: 5px; padding-bottom: 5px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing: 0; width: 100%; -ko-width: @[hrStyle.hrWidth]%; -ko-attr-width: @[hrStyle.hrWidth]%"><tr>
+      <td valign="top" align="center" style="padding: 20px; padding-top: 0px; padding-bottom: 0px;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing: 0; width: 100%; -ko-width: @[hrStyle.hrWidth]%; -ko-attr-width: @[hrStyle.hrWidth]%"><tr>
         <td width="100%" height="1" style="padding: 0; font-size:1px; line-height: 1px; max-height: 1px; width: 100%; background-color: #3f3f3f; line-height: 1px; max-height: 1px; overflow: hidden; -ko-background-color: @hrStyle.color; -ko-attr-height: @hrStyle.hrHeight; -ko-line-height: @[hrStyle.hrHeight]px; -ko-max-height: @[hrStyle.hrHeight]px">&nbsp;</td>
       </tr></table></td>
     </tr>
