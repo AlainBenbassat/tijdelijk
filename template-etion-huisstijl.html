@@ -144,6 +144,8 @@
       quoteTextStyle size { label: Text Size; widget: integer; min: 10; max: 40; default: 15 }
       quoteTitleStyle { label: Quote Title; extend: titleTextStyle }
       quoteTitleStyle size { label: Title Size; widget: integer; min: 10; max: 60; default: 24 }
+      threeElementsTitleStyle { label: Title; extend: titleTextStyle }
+      threeElementsTitleStyle size { label: Title Size; widget: integer; min: 10; max: 60; default: 28 }
       longTextStyle:preview { -ko-bind-text: @['AaZz']; -ko-font-family: @face; -ko-color: @color; -ko-font-size: @[size]px; }
       bigButtonStyle { label: Big Button; extend: buttonStyle }
       titleTextStyle { label: Title; extend: textStyle }
@@ -274,6 +276,10 @@
         renderHint: buttonset;
       }
       sideArticleBlock { label: Image+Text Block; properties: backgroundColor titleVisible=true buttonVisible=true imageWidth=166 imagePos=left titleTextStyle longTextStyle buttonStyle  image  longText buttonLink; variant:imagePos; theme: contentTheme }
+      threeElementsBlock imagePos { label: Image position; widget: select; options: left=Left|right=Right; }
+      threeElementsBlock imageWidth { label: Image Size; widget: select; options: 120=Small|166=Medium|258=Big; }
+      threeElementsBlock blockImage { label: Afbeelding; widget: select; options: https://ledennet.etion.be/sites/default/files/etion_mailing/blokken_geel.png=Geel|https://ledennet.etion.be/sites/default/files/etion_mailing/blokken_groen.png=Groen|https://ledennet.etion.be/sites/default/files/etion_mailing/blokken_oranje.png=Oranje; renderHint: buttonset; }
+      threeElementsBlock { label: Three Elements Block; properties: titleVisible=true buttonVisible=true imageWidth=258 imagePos=right blockImage=https://ledennet.etion.be/sites/default/files/etion_mailing/blokken_geel.png threeElementsTitleStyle longTextStyle buttonStyle longText buttonLink; variant:imagePos; theme: contentTheme }
       logoEtionBlock { label: Logo Block; properties: backgroundColor longTextStyle longText; theme: contentTheme }
 
       sideImageBlock imagePos {label:Image position;widget:select; options: left=Left|right=Right;
@@ -576,6 +582,48 @@
     </td></tr>
     </table>
     <!-- /sideArticleBlock -->
+    <!-- threeElementsBlock -->
+    <table role="presentation" class="vb-outer" width="100%" cellpadding="0" border="0" cellspacing="0" bgcolor="#f0e8e0" style="background-color: #f0e8e0; -ko-background-color: @[externalBackgroundColor]; -ko-attr-bgcolor: @[externalBackgroundColor]" data-ko-block="threeElementsBlock">
+      <tr><td class="vb-outer" align="center" valign="top" style="padding-left: 9px; padding-right: 9px; font-size: 0">
+      <!--[if (gte mso 9)|(lte ie 8)]><table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="570"><tr><td align="center" valign="top"><![endif]--><!--
+      --><div style="margin: 0 auto; max-width: 570px; -mru-width: 0px"><table role="presentation" class="vb-row" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%; background-color: #F7F4EF; max-width: 570px; -mru-width: 0px" bgcolor="#F7F4EF" width="570">
+        
+        <tr>
+      <td align="center" valign="top" style="font-size: 0; padding-top: 30px; padding-bottom: 30px; -ko-padding-top: @[blockSpacing.topPadding]px; -ko-padding-bottom: @[blockSpacing.bottomPadding]px;"><table dir="" role="presentation" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" dir="rtl" style="direction: rtl; border-collapse: collapse; -ko-attr-dir: @[imagePos eq 'left' ? 'ltr' : 'rtl']; -ko-direction: @[imagePos eq 'left' ? 'ltr' : 'rtl']"><div style="width:100%; max-width: 552px; -mru-width: 0px"><!--[if (gte mso 9)|(lte ie 8)]><table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="552"><tr><![endif]--><!--
+        --><!--
+          --><!--[if (gte mso 9)|(lte ie 8)]><td align="left" valign="top" width="298"><![endif]--><!--
+      --><div style="display:inline-block; vertical-align:top; width: 100%; max-width: 298px; -mru-width: 0px; -ko-max-width: @[2 * blockSpacing.horizontalSpacing + Math.round(imageWidth) + 'px']; min-width: calc(184 * 100% / 552); -ko-min-width: @['calc(' + (true ? 2 * blockSpacing.horizontalSpacing + Math.round(imageWidth) : 184) * 100 / 552 + '%)']; max-width: calc(100%); -ko-max-width: @['calc(100%)']; width: calc(552 * 552px - 552 * 100%); -ko-width: @['calc('+ 552 * 552 + 'px - ' + 552 * 100 +'%)']" class="mobile-full"><!--
+        --><table role="presentation" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; width: 100%; -ko-attr-width: @[2 * blockSpacing.horizontalSpacing + Math.round(imageWidth)]; direction: ltr; -yandex-p: calc(2px - 3%)" width="298" dir="ltr" align="left">
+          
+            <tr><td width="100%" valign="top" align="center" class="links-color" style="padding: 20px; padding-top: 10px; padding-bottom: 10px; padding: 20px; padding-top: 10px; padding-bottom: 10px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px;"><img alt="" border="0" hspace="0" align="center" vspace="0" style="vertical-align:top; height: auto; margin: 0 auto; width: 100%; max-width: 258px; -ko-attr-width: @[imageWidth]; -ko-max-width: @[imageWidth]px; height: auto; -ko-attr-src: @[blockImage];" src="https://ledennet.etion.be/sites/default/files/etion_mailing/blokken_geel.png" width="258"></td></tr>
+          
+        </table><!--
+      --></div><!--[if (gte mso 9)|(lte ie 8)]></td><![endif]--><!--
+          --><!--[if (gte mso 9)|(lte ie 8)]><td align="left" valign="top" width="254" style="-ko-attr-width: @[552 - 2 * blockSpacing.horizontalSpacing - Math.round(imageWidth)]"><![endif]--><!--
+      --><div style="display:inline-block; vertical-align:top; width: 100%; max-width: 254px; -mru-width: 0px; -ko-max-width: @[552 - 2 * blockSpacing.horizontalSpacing - Math.round(imageWidth) + 'px']; min-width: calc(368 * 100% / 552); -ko-min-width: @['calc(' + (true ? 552 - 2 * blockSpacing.horizontalSpacing - Math.round(imageWidth) : 368) * 100 / 552 + '%)']; max-width: calc(100%); -ko-max-width: @['calc(100%)']; width: calc(552 * 552px - 552 * 100%); -ko-width: @['calc('+ 552 * 552 + 'px - ' + 552 * 100 +'%)']" class="mobile-full"><!--
+        --><table role="presentation" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; width: 100%; -ko-attr-width: @[552 - 2 * blockSpacing.horizontalSpacing - Math.round(imageWidth)]; direction: ltr; -yandex-p: calc(2px - 3%)" width="254" dir="ltr" align="left">
+          
+            <tr data-ko-display="titleVisible">
+      <td width="100%" valign="top" style="font-weight: normal; color: #3f3f3f; font-size: 28px; font-family: Times New Roman, Times, serif; padding: 20px; padding-top: 10px; padding-bottom: 10px; padding: 20px; padding-top: 10px; padding-bottom: 10px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: left; -ko-font-size: @[threeElementsTitleStyle.size]px; -ko-color: @threeElementsTitleStyle.color; -ko-font-family: @threeElementsTitleStyle.face; -ko-text-align: @threeElementsTitleStyle.align; -ko-attr-align: @threeElementsTitleStyle.align" align="left"><span style="font-weight: normal" data-ko-editable="titleText">Jezelf, je bedrijf en de wereld.</span></td>
+    </tr>
+            <tr><td class="long-text links-color" width="100%" valign="top" style="font-weight: normal; color: #3f3f3f; font-size: 13px; font-family: Arial, Helvetica, sans-serif; padding: 20px; padding-top: 10px; padding-bottom: 10px; padding: 20px; padding-top: 10px; padding-bottom: 10px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: left; line-height: normal; -ko-font-size: @[longTextStyle.size]px; -ko-color: @longTextStyle.color; -ko-font-family: @longTextStyle.face; -ko-text-align: @longTextStyle.align; -ko-attr-align: @longTextStyle.align; -ko-line-height: @[longTextStyle.lineHeight]" align="left" data-ko-editable="longText"><p>Far far away, behind the word mountains, far from the countries <a href="">Vokalia and Consonantia</a>, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p></td></tr>
+            <tr data-ko-display="buttonVisible">
+      <td valign="top" align="left" style="-ko-attr-align: @buttonStyle.align; padding: 20px; padding-top: 10px; padding-bottom: 10px; padding: 20px; padding-top: 10px; padding-bottom: 10px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px;"><table role="presentation" cellpadding="10" border="0" align="left" cellspacing="0" style="border-spacing: 0; mso-padding-alt: 10px 24px 10px 24px; margin-top: 2px; -ko-attr-cellpadding: @[Math.min(buttonStyle.verticalPadding, buttonStyle.horizontalPadding)]; -ko-mso-padding-alt: @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px @[buttonStyle.verticalPadding]px @[buttonStyle.horizontalPadding]px; -ko-attr-align: @buttonStyle.align"><tr data-ko-display="buttonVisible">
+        <td width="auto" valign="middle" align="center" style="text-align:center; font-weight: normal; padding: 10px; padding-left: 24px; padding-right: 24px; background-color: #000000; color: #ffffff; font-size: 15px; font-family: Arial, Helvetica, sans-serif; border-radius: 40px; border: 0px solid #3f3f3f; -ko-border-radius: @[buttonStyle.radius]px; -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor; -ko-border: @[buttonStyle.borderWidth]px solid @buttonStyle.borderColor; -ko-border-if: buttonStyle.borderWidth > 0; -ko-padding: @[buttonStyle.verticalPadding]px; -ko-padding-left: @[buttonStyle.horizontalPadding]px; -ko-padding-right: @[buttonStyle.horizontalPadding]px; -ko-font-size: @[buttonStyle.size]px; -ko-color: @buttonStyle.color; -ko-font-family: @buttonStyle.face" bgcolor="#000000"><a href="" style="text-decoration: none; font-weight: normal; color: #ffffff; font-size: 15px; font-family: Arial, Helvetica, sans-serif; -ko-font-size: @[buttonStyle.size]px; -ko-color: @buttonStyle.color; -ko-font-family: @buttonStyle.face; -ko-attr-href: @buttonLink.url"><span data-ko-wrap="false" data-ko-editable="buttonLink.text">BUTTON</span></a></td>
+      </tr></table></td>
+    </tr>
+          
+        </table><!--
+      --></div><!--[if (gte mso 9)|(lte ie 8)]></td><![endif]--><!--
+        --><!--
+      --><!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]--></div></td></tr></table></td>
+    </tr>
+      
+      </table></div><!--
+    --><!--[if (gte mso 9)|(lte ie 8)]></td></tr></table><![endif]-->
+    </td></tr>
+    </table>
+    <!-- /threeElementsBlock -->
     <!-- logoEtionBlock -->
     <table role="presentation" class="vb-outer" width="100%" cellpadding="0" border="0" cellspacing="0" bgcolor="#f0e8e0" style="background-color: #f0e8e0; -ko-background-color: @[externalBackgroundColor]; -ko-attr-bgcolor: @[externalBackgroundColor]" data-ko-block="logoEtionBlock">
       <tr><td class="vb-outer" align="center" valign="top" style="padding-left: 9px; padding-right: 9px; font-size: 0">
