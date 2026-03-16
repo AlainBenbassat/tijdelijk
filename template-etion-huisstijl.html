@@ -305,6 +305,8 @@
 
       doubleArticleBlock { label: 2 Columns Block; properties: backgroundColor titleVisible=true buttonVisible=true imageVisible=true fixedImageHeightVisible=true titleTextStyle longTextStyle buttonStyle  leftImage  leftLongText leftButtonLink rightImage  rightLongText rightButtonLink; theme: contentTheme}
 
+      colofonBlock { label: Colofon Block; properties: backgroundColor longTextStyle leftLongText rightLongText; theme: contentTheme}
+
       chapterBlock { label: Chapter Block; properties: backgroundColor longTextStyle leftLongText rightLongText; theme: contentTheme}
       chapterBlockWithColor { label: Chapter Block (Color); properties: backgroundColor longTextStyle leftLongText rightLongText; theme: contentTheme}
 
@@ -344,6 +346,7 @@
       quoteBlock:preview,
       footerEtionBlock:preview,
       doubleArticleBlock:preview,
+      colofonBlock:preview,
       chapterBlock:preview,
       chapterBlockWithColor:preview,
       tripleArticleBlock:preview,
@@ -432,6 +435,14 @@
     [data-ko-block=doubleArticleBlock] .links-color a:hover {
       color: #3f3f3f;
       -ko-color: @longTextStyle.linksColor;
+      text-decoration: underline;
+    }
+
+    [data-ko-block=colofonBlock] .links-color a,
+    [data-ko-block=colofonBlock] .links-color a:link,
+    [data-ko-block=colofonBlock] .links-color a:visited,
+    [data-ko-block=colofonBlock] .links-color a:hover {
+      color: #000000;
       text-decoration: underline;
     }
 
@@ -911,6 +922,42 @@
     </td></tr>
     </table>
     <!-- /doubleArticleBlock -->
+
+    <!-- colofonBlock -->
+    <table role="presentation" class="vb-outer" width="100%" cellpadding="0" border="0" cellspacing="0" bgcolor="#f0e8e0" style="background-color: #f0e8e0; -ko-background-color: @[externalBackgroundColor]; -ko-attr-bgcolor: @[externalBackgroundColor]" data-ko-block="colofonBlock">
+      <tr><td class="vb-outer" align="center" valign="top" style="padding-left: 9px; padding-right: 9px; font-size: 0">
+      <!--[if (gte mso 9)|(lte ie 8)]><table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="570"><tr><td align="center" valign="top"><![endif]--><!--
+      --><div style="margin: 0 auto; max-width: 570px; -mru-width: 0px"><table role="presentation" class="vb-row" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%; background-color: #ffffff; -ko-background-color: @[backgroundColor]; -ko-attr-bgcolor: @[backgroundColor]; max-width: 570px; -mru-width: 0px" bgcolor="#ffffff" width="570">
+
+        <tr>
+      <td align="center" valign="top" style="font-size: 0;"><div style="width:100%; max-width: 552px; -mru-width: 0px"><!--[if (gte mso 9)|(lte ie 8)]><table role="presentation" align="center" border="0" cellspacing="0" cellpadding="0" width="552" style="mso-padding-top-alt: 30px; mso-padding-bottom-alt: 30px; -ko-mso-padding-top-alt: @[blockSpacing.topPadding]px; -ko-mso-padding-bottom-alt: @[blockSpacing.bottomPadding]px;"><tr><![endif]--><!--
+        --><!--
+            --><!--[if (gte mso 9)|(lte ie 8)]><td align="left" valign="top" width="276"><![endif]--><!--
+      --><div style="display:inline-block; vertical-align:top; width: 100%; max-width: 276px; -mru-width: 0px; padding-top: 30px; padding-bottom: 30px; -ko-padding-top: @[blockSpacing.topPadding]px; -ko-padding-bottom: @[blockSpacing.bottomPadding]px; min-width: calc(276 * 100% / 552); -ko-min-width: @['calc(' + (276) * 100 / 552 + '%)']; max-width: calc(100%); -ko-max-width: @['calc(100%)']; width: calc(552 * 552px - 552 * 100%); -ko-width: @['calc('+ 552 * 552 + 'px - ' + 552 * 100 +'%)']" class="mobile-full"><!--
+        --><table role="presentation" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; width: 100%; -yandex-p: calc(2px - 3%)" width="276" align="left">
+
+              <tr><td class="long-text links-color" width="100%" valign="top" style="font-weight: normal; color: #3f3f3f; font-size: 13px; font-family: Arial, Helvetica, sans-serif; padding: 20px; padding-top: 10px; padding-bottom: 10px; padding: 20px; padding-top: 10px; padding-bottom: 10px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: left; line-height: normal; -ko-font-size: @[longTextStyle.size]px; -ko-color: @longTextStyle.color; -ko-font-family: @longTextStyle.face; -ko-text-align: @longTextStyle.align; -ko-attr-align: @longTextStyle.align; -ko-line-height: @[longTextStyle.lineHeight]" align="left" data-ko-editable="leftLongText"><p>Etion Redactie<br />Isabelle Verlinden<br />T 03 829 25 02</p><p>Sneeuwbeslaan 20 bus 1<br />2610 Wilrijk<br /><a href="https://www.etion.be">www.etion.be</a></p></td></tr>
+
+        </table><!--
+      --></div><!--[if (gte mso 9)|(lte ie 8)]></td><![endif]--><!--
+          --><!--
+            --><!--[if (gte mso 9)|(lte ie 8)]><td align="left" valign="top" width="276"><![endif]--><!--
+      --><div style="display:inline-block; vertical-align:top; width: 100%; max-width: 276px; -mru-width: 0px; padding-top: 30px; padding-bottom: 30px; -ko-padding-top: @[blockSpacing.topPadding]px; -ko-padding-bottom: @[blockSpacing.bottomPadding]px; min-width: calc(276 * 100% / 552); -ko-min-width: @['calc(' + (276) * 100 / 552 + '%)']; max-width: calc(100%); -ko-max-width: @['calc(100%)']; width: calc(552 * 552px - 552 * 100%); -ko-width: @['calc('+ 552 * 552 + 'px - ' + 552 * 100 +'%)']" class="mobile-full"><!--
+        --><table role="presentation" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; width: 100%; -yandex-p: calc(2px - 3%)" width="276" align="left">
+
+              <tr><td class="long-text links-color" width="100%" valign="top" style="font-weight: normal; color: #3f3f3f; font-size: 13px; font-family: Arial, Helvetica, sans-serif; padding: 20px; padding-top: 10px; padding-bottom: 10px; padding: 20px; padding-top: 10px; padding-bottom: 10px; -ko-padding: @[blockSpacing.horizontalSpacing]px; -ko-padding-top: @[blockSpacing.verticalSpacing]px; -ko-padding-bottom: @[blockSpacing.verticalSpacing]px; text-align: left; line-height: normal; -ko-font-size: @[longTextStyle.size]px; -ko-color: @longTextStyle.color; -ko-font-family: @longTextStyle.face; -ko-text-align: @longTextStyle.align; -ko-attr-align: @longTextStyle.align; -ko-line-height: @[longTextStyle.lineHeight]" align="left" data-ko-editable="rightLongText"><p style="line-height: 1.5rem;"><a href="https://www.facebook.com/etionforum/">Facebook</a><br /><a href="https://be.linkedin.com/company/etion">LinkedIn</a><br /><a href="https://www.instagram.com/etionforum/">Instagram</a><br /><a href="https://www.youtube.com/@etion1776">YouTube</a></p></td></tr>
+
+        </table><!--
+      --></div><!--[if (gte mso 9)|(lte ie 8)]></td><![endif]--><!--
+          --><!--
+      --><!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]--></div></td>
+    </tr>
+
+      </table></div><!--
+    --><!--[if (gte mso 9)|(lte ie 8)]></td></tr></table><![endif]-->
+    </td></tr>
+    </table>
+    <!-- /colofonBlock -->
 
     <!-- chapterBlock -->
     <table role="presentation" class="vb-outer" width="100%" cellpadding="0" border="0" cellspacing="0" bgcolor="#f0e8e0" style="background-color: #f0e8e0; -ko-background-color: @[externalBackgroundColor]; -ko-attr-bgcolor: @[externalBackgroundColor]" data-ko-block="chapterBlock">
